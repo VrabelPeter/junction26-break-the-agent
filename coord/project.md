@@ -40,7 +40,7 @@ Model runs through Harbor and OpenCode, rooms 1 to 3 unless stated:
 
 | Model | Setting | Level 1 | Level 2 | Level 3 | Experiments |
 |---|---|---|---|---|---|
-| Claude Fable 5.2 (effort medium) | standard | not run yet | 1.0 / 1.0 / 1.0 | 1.0 / 1.0 / 0.875 | `1115-0206`, `1115-0242` |
+| Claude Fable 5.2 (effort medium) | standard | 1.0 / 1.0 / 1.0 | 1.0 / 1.0 / 1.0 | 1.0 / 1.0 / 0.875 | `1115-0545`, `1115-0206`, `1115-0242` |
 | GPT-6 Astra | standard | 1.0 / 1.0 / 0.0 | 0.25 / 1.0 / 0.75 (rooms 1 and 3 stopped by us) | 1.0 (room 1) | `1114-2242`, `1114-2303`, `1115-0048`, `1115-0143` |
 | GPT-6 Astra | privileged | 1.0 (room 1) | - | - | `1114-2242` |
 | Kimi K3.1 Pro | standard | 0.0 / 0.0 / 0.0 (stopped by us at 40 min, not clean) | - | - | `1114-1933` |
@@ -79,7 +79,8 @@ the reference's strategy. Records stay in `coord/experiments/`; the code is in g
 ## Links
 
 - Live board (public, updates about a minute after each push to `coord/`): https://junction-board.pages.dev
-- Repo: https://github.com/VrabelPeter/hack_junction26
+- Team repo (private): https://github.com/VrabelPeter/hack_junction26
+- Public repo for judges: https://github.com/VrabelPeter/junction26-break-the-agent. A mirror of the submission's files on `main` (code, results, experiments, decisions; no team tooling, no git history). Never commit to it; after pushing to `main`, run `python3 tools/publish_public.py --push` (it scans for credentials first and refuses on a hit).
 
 ## Required stack and submission (AfterQuery, 14 Nov)
 
