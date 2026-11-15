@@ -1,0 +1,19 @@
+{
+ "score": 0.0,
+ "progress": 0.0,
+ "care": 1.0,
+ "trash_total": 1,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "fate": {
+  "paper_ball_1": "on_table"
+ },
+ "milestones": {
+  "brush_in_hand": 27.98,
+  "bin_in_hand": 31.43
+ },
+ "robot_time_s": 73.4,
+ "seed": 5,
+ "level": 1,
+ "setting": "standard"
+}

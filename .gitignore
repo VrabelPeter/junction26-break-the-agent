@@ -1,0 +1,25 @@
+# generated board (rebuild with: python3 tools/coord.py board)
+board/
+public/
+
+# per-clone identity override for tools/coord.py
+.coord-handle
+
+# raw run outputs and trajectories - commit summaries to results/ instead
+runs/
+
+# secrets: never commit API keys or model credentials
+.env
+.env.*
+!.env.example
+
+# personal Claude Code settings
+.claude/settings.local.json
+
+# python / node / os
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.DS_Store

@@ -1,0 +1,20 @@
+{
+ "qwen": {
+  "label": "Qwen3-VL-2B-Thinking (open, served by us on Modal)"
+ },
+ "qwen32": {
+  "label": "Qwen3-VL-32B-Thinking (open, served by us on Modal)"
+ },
+ "gemma4": {
+  "label": "Gemma 4 31B (open, served by us on Modal)"
+ },
+ "qwen38": {
+  "label": "Qwen3.8-27B (open, served by us on Modal)"
+ },
+ "qwen35": {
+  "label": "Qwen3.5-9B (open, served by us on Modal)"
+ },
+ "astra": {
+  "label": "GPT-6 Astra (OpenAI)"
+ }
+}

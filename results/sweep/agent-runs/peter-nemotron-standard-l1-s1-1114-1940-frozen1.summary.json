@@ -1,0 +1,31 @@
+{
+ "run": "peter-nemotron-standard-l1-s1-1114-1940-frozen1",
+ "who": "peter",
+ "model": "nemotron",
+ "model_id": "verda-nemotron/nemotron-3.5-super-vl",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [
+  {
+   "item": "bin",
+   "why": "bin tipped over"
+  }
+ ],
+ "milestones": {},
+ "robot_time_s": 131.0,
+ "tool_calls": 459,
+ "minutes": 16.5,
+ "tokens": {
+  "input": 6196430,
+  "cached": 0,
+  "output": 164155
+ },
+ "cost_usd": null,
+ "commit": "08945de",
+ "date": "2026-11-14T19:56",
+ "error": "agent cut off, not a clean run (NonZeroAgentExitCodeError: getaddrinfo EAI_AGAIN containers.datacrunch.io)",
+ "trial": "runs/sweep/peter-nemotron-standard-l1-s1-1114-1940-frozen1/2026-11-14__19-40-02/sweep__w787o8k"
+}

@@ -1,0 +1,26 @@
+{
+ "run": "frederik-qwen35-privileged-l1-s1-1114-2154-frozen1",
+ "who": "frederik",
+ "model": "qwen35",
+ "model_id": "modal-qwen35/qwen3.5-9b",
+ "setting": "privileged",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 139.2,
+ "tool_calls": 210,
+ "minutes": 23.8,
+ "tokens": {
+  "input": 9614716,
+  "cached": 0,
+  "output": 39349
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-14T22:17",
+ "error": "agent cut off, not a clean run (NonZeroAgentExitCodeError)",
+ "trial": "runs/sweep/frederik-qwen35-privileged-l1-s1-1114-2154-frozen1/2026-11-14__21-54-08/sweep__P9AvW7h"
+}

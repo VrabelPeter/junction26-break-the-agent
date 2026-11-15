@@ -1,0 +1,16 @@
+{
+ "score": 0.0,
+ "progress": 0.0,
+ "care": 1.0,
+ "trash_total": 1,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "fate": {
+  "core_1": "on_table"
+ },
+ "milestones": {},
+ "robot_time_s": 304.6,
+ "seed": 1,
+ "level": 1,
+ "setting": "standard"
+}

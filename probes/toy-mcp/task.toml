@@ -1,0 +1,40 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "junction/toy-mcp"
+version = "1.0.0"
+description = "Plumbing check: MCP sidecar holds the state and the score"
+authors = []
+keywords = []
+
+[metadata]
+
+[verifier]
+user = "root"
+timeout_sec = 300.0
+environment_mode = "shared"
+collect = []
+
+[verifier.env]
+
+[agent]
+# The agent runs unprivileged so it cannot tamper with what the verifier (root) uses.
+user = "agent"
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 900.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+
+[[environment.mcp_servers]]
+name = "env"
+transport = "streamable-http"
+url = "http://env-server:8000/mcp"
+
+[environment.env]
+
+[solution.env]

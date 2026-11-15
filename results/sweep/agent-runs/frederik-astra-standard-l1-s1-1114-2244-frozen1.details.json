@@ -1,0 +1,22 @@
+{
+ "score": 1.0,
+ "progress": 1.0,
+ "care": 1.0,
+ "trash_total": 1,
+ "trash_in_bin": 1,
+ "mistakes": [],
+ "fate": {
+  "core_1": "in_bin"
+ },
+ "milestones": {
+  "brush_in_hand": 8.68,
+  "bin_in_hand": 11.07,
+  "brush_touched_trash": 79.98,
+  "first_trash_in_bin": 122.0,
+  "all_trash_in_bin": 122.0
+ },
+ "robot_time_s": 150.4,
+ "seed": 1,
+ "level": 1,
+ "setting": "standard"
+}

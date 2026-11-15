@@ -1,0 +1,40 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "junction/shape-board"
+version = "0.1.0"
+description = "A robot arm pushes shaped pegs (star, rectangle, ...) into matching holes it can only find by feel"
+authors = []
+keywords = ["probe", "robotics", "insertion"]
+
+[metadata]
+
+[verifier]
+user = "root"
+timeout_sec = 300.0
+environment_mode = "shared"
+collect = []
+
+[verifier.env]
+
+[agent]
+# The agent runs unprivileged so it cannot tamper with what the verifier (root) uses.
+user = "agent"
+timeout_sec = 3600.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 1200.0
+os = "linux"
+cpus = 2
+memory_mb = 2048
+
+[[environment.mcp_servers]]
+name = "robot"
+transport = "streamable-http"
+url = "http://env-server:8000/mcp"
+
+[environment.env]
+
+[solution.env]

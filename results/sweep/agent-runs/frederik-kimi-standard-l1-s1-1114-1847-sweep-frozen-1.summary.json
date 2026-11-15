@@ -1,0 +1,26 @@
+{
+ "run": "frederik-kimi-standard-l1-s1-1114-1847-sweep-frozen-1",
+ "who": "frederik",
+ "model": "kimi",
+ "model_id": "verda/kimi-k3-1-pro",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": null,
+ "trash_in_bin": null,
+ "mistakes": null,
+ "milestones": null,
+ "robot_time_s": null,
+ "tool_calls": 0,
+ "minutes": 40.6,
+ "tokens": {
+  "input": 334012,
+  "cached": 14377728,
+  "output": 160329
+ },
+ "cost_usd": 5.15,
+ "commit": "7eda2eb",
+ "date": "2026-11-14T19:27",
+ "error": "no score written; see runs/sweep/frederik-kimi-standard-l1-s1-1114-1847-sweep-frozen-1.log",
+ "trial": "runs/sweep/frederik-kimi-standard-l1-s1-1114-1847-sweep-frozen-1/2026-11-14__18-47-17/sweep__SSvyXtH"
+}

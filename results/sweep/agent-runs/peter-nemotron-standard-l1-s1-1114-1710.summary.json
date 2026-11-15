@@ -1,0 +1,27 @@
+{
+ "run": "peter-nemotron-standard-l1-s1-1114-1710",
+ "model": "nemotron",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 304.6,
+ "tool_calls": 268,
+ "minutes": 12.4,
+ "tokens": {
+  "input": 17021340,
+  "cached": 0,
+  "output": 144871
+ },
+ "who": "peter",
+ "model_id": "verda-nemotron/nemotron-3.5-super-vl",
+ "cost_usd": null,
+ "commit": "121b6a4",
+ "date": "2026-11-14T17:10",
+ "error": null,
+ "trial": null,
+ "note": "imported from the run made before run names carried a handle"
+}

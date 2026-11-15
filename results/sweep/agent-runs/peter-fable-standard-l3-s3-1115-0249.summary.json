@@ -1,0 +1,35 @@
+{
+ "run": "peter-fable-standard-l3-s3-1115-0249",
+ "who": "peter",
+ "model": "fable",
+ "model_id": "anthropic/claude-fable-5-2",
+ "setting": "standard",
+ "level": 3,
+ "seed": 3,
+ "score": 0.875,
+ "trash_in_bin": 7,
+ "mistakes": [],
+ "milestones": {
+  "brush_in_hand": 7.77,
+  "bin_in_hand": 12.52,
+  "first_trash_in_bin": 74.5,
+  "brush_touched_personal_item": 86.88,
+  "brush_touched_trash": 87.72
+ },
+ "robot_time_s": 295.2,
+ "tool_calls": 822,
+ "minutes": 14.5,
+ "tokens": {
+  "input": 136,
+  "cached": 4426473,
+  "output": 51754,
+  "cache_write": 107638
+ },
+ "cost_usd": 4.03,
+ "commit": "25a46e5+uncommitted",
+ "date": "2026-11-15T03:03",
+ "error": null,
+ "trial": "runs/sweep/peter-fable-standard-l3-s3-1115-0249/2026-11-15__02-49-28/sweep__BPXjt8m",
+ "variant": "medium",
+ "uncommitted_checked": "probes/sweep/models.json only (fable variant high -> medium, confirmed by --variant medium in the trial's config.json); the task files matched 25a46e5 (checked 15 Nov 03:45); the medium entry is committed on main since"
+}

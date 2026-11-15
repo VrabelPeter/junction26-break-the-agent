@@ -1,0 +1,28 @@
+{
+ "run": "peter-fable-standard-l3-s1-1115-0045",
+ "who": "peter",
+ "model": "fable",
+ "model_id": "anthropic/claude-fable-5-2",
+ "setting": "standard",
+ "level": 3,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 12.7,
+ "tool_calls": 1393,
+ "minutes": 12.6,
+ "tokens": {
+  "input": 42,
+  "cached": 731298,
+  "output": 37274,
+  "cache_write": 69641
+ },
+ "cost_usd": 2.33,
+ "commit": "7d1b34e",
+ "date": "2026-11-15T00:58",
+ "error": "agent cut off, not a clean run (NonZeroAgentExitCodeError)",
+ "trial": "runs/sweep/peter-fable-standard-l3-s1-1115-0045/2026-11-15__00-45-52/sweep__xt37Bk2",
+ "variant": "high"
+}

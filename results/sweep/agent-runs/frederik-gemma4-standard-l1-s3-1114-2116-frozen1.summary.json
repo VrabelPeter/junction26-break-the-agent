@@ -1,0 +1,28 @@
+{
+ "run": "frederik-gemma4-standard-l1-s3-1114-2116-frozen1",
+ "who": "frederik",
+ "model": "gemma4",
+ "model_id": "modal-gemma4/gemma-4-31b-it",
+ "setting": "standard",
+ "level": 1,
+ "seed": 3,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 429.3,
+ "tool_calls": 279,
+ "minutes": 11.0,
+ "tokens": {
+  "input": 13625509,
+  "cached": 0,
+  "output": 9498
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-14T21:27",
+ "error": null,
+ "trial": "runs/sweep/frederik-gemma4-standard-l1-s3-1114-2116-frozen1/2026-11-14__21-16-55/sweep__TzW2xfK",
+ "commit_recorded_by_script": "4db1109",
+ "task": "copy of probes/sweep at tag sweep-frozen-1 (3564f98) with this model added to models.json and opencode-models.json"
+}

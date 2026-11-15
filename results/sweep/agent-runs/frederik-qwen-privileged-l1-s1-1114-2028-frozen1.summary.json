@@ -1,0 +1,28 @@
+{
+ "run": "frederik-qwen-privileged-l1-s1-1114-2028-frozen1",
+ "who": "frederik",
+ "model": "qwen",
+ "model_id": "modal-qwen/qwen3-vl-2b-thinking",
+ "setting": "privileged",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 54.4,
+ "tool_calls": 36,
+ "minutes": 13.3,
+ "tokens": {
+  "input": 1490086,
+  "cached": 0,
+  "output": 42816
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-14T20:41",
+ "error": null,
+ "trial": "runs/sweep/frederik-qwen-privileged-l1-s1-1114-2028-frozen1/2026-11-14__20-28-24/sweep__5NP3aAA",
+ "commit_recorded_by_script": "5403fe9",
+ "task": "copy of probes/sweep at tag sweep-frozen-1 (3564f98) with this model added to models.json and opencode-models.json"
+}

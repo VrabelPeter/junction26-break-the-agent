@@ -1,0 +1,37 @@
+{
+ "run": "frederik-astra-standard-l1-s3-1114-2244-frozen1",
+ "who": "frederik",
+ "model": "astra",
+ "model_id": "openai/gpt-6-astra",
+ "setting": "standard",
+ "level": 1,
+ "seed": 3,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [
+  {
+   "item": "bin",
+   "why": "bin tipped over"
+  }
+ ],
+ "milestones": {
+  "brush_in_hand": 19.19,
+  "bin_in_hand": 27.48,
+  "brush_touched_trash": 131.1,
+  "first_trash_in_bin": 131.44,
+  "all_trash_in_bin": 131.44
+ },
+ "robot_time_s": 185.3,
+ "tool_calls": 121,
+ "minutes": 8.8,
+ "tokens": {
+  "input": 348,
+  "cached": 3251609,
+  "output": 7238
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-14T22:53",
+ "error": "agent cut off, not a clean run (NonZeroAgentExitCodeError)",
+ "trial": "runs/sweep/frederik-astra-standard-l1-s3-1114-2244-frozen1/2026-11-14__22-44-24/sweep__FUtaCzL"
+}

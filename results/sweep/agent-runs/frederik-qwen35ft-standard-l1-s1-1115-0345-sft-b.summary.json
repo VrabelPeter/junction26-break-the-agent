@@ -1,0 +1,29 @@
+{
+ "run": "frederik-qwen35ft-standard-l1-s1-1115-0345-sft-b",
+ "who": "frederik",
+ "model": "qwen35ft",
+ "model_id": "modal-qwen35ft/qwen3.5-9b-sweep",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {
+  "brush_in_hand": 27.98,
+  "bin_in_hand": 31.43
+ },
+ "robot_time_s": 69.0,
+ "tool_calls": 53,
+ "minutes": 3.0,
+ "tokens": {
+  "input": 1033601,
+  "cached": 0,
+  "output": 3124
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-15T03:48",
+ "error": "agent cut off, not a clean run (NonZeroAgentExitCodeError)",
+ "trial": "runs/sweep/frederik-qwen35ft-standard-l1-s1-1115-0345-sft-b/2026-11-15__03-45-57/sweep__xJJaou7"
+}

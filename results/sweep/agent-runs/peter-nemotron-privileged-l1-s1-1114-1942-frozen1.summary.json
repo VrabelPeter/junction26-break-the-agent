@@ -1,0 +1,26 @@
+{
+ "run": "peter-nemotron-privileged-l1-s1-1114-1942-frozen1",
+ "who": "peter",
+ "model": "nemotron",
+ "model_id": "verda-nemotron/nemotron-3.5-super-vl",
+ "setting": "privileged",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 0.0,
+ "tool_calls": 2,
+ "minutes": 1.7,
+ "tokens": {
+  "input": 39148,
+  "cached": 0,
+  "output": 16144
+ },
+ "cost_usd": null,
+ "commit": "08945de",
+ "date": "2026-11-14T19:43",
+ "error": null,
+ "trial": "runs/sweep/peter-nemotron-privileged-l1-s1-1114-1942-frozen1/2026-11-14__19-42-12/sweep__iHfcj3S"
+}

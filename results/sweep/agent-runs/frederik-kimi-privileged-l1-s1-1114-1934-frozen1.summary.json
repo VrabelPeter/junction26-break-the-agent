@@ -1,0 +1,32 @@
+{
+ "run": "frederik-kimi-privileged-l1-s1-1114-1934-frozen1",
+ "who": "frederik",
+ "model": "kimi",
+ "model_id": "verda/kimi-k3-1-pro",
+ "setting": "privileged",
+ "level": 1,
+ "seed": 1,
+ "score": 1.0,
+ "trash_in_bin": 1,
+ "mistakes": [],
+ "milestones": {
+  "bin_in_hand": 8.85,
+  "brush_in_hand": 63.03,
+  "brush_touched_trash": 153.58,
+  "first_trash_in_bin": 158.5,
+  "all_trash_in_bin": 158.5
+ },
+ "robot_time_s": 166.5,
+ "tool_calls": 121,
+ "minutes": 14.3,
+ "tokens": {
+  "input": 110790,
+  "cached": 4395712,
+  "output": 55146
+ },
+ "cost_usd": 1.65,
+ "commit": "592a119",
+ "date": "2026-11-14T19:48",
+ "error": null,
+ "trial": "runs/sweep/frederik-kimi-privileged-l1-s1-1114-1934-frozen1/2026-11-14__19-34-10/sweep__9pNEuQj"
+}

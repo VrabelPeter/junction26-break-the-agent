@@ -1,0 +1,28 @@
+{
+ "run": "frederik-qwen32-standard-l1-s2-1114-2057-frozen1",
+ "who": "frederik",
+ "model": "qwen32",
+ "model_id": "modal-qwen32/qwen3-vl-32b-thinking",
+ "setting": "standard",
+ "level": 1,
+ "seed": 2,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 43.8,
+ "tool_calls": 107,
+ "minutes": 24.9,
+ "tokens": {
+  "input": 5370490,
+  "cached": 0,
+  "output": 42975
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-14T21:22",
+ "error": "agent cut off, not a clean run (NonZeroAgentExitCodeError)",
+ "trial": "runs/sweep/frederik-qwen32-standard-l1-s2-1114-2057-frozen1/2026-11-14__20-57-46/sweep__GdX2jbn",
+ "commit_recorded_by_script": "67e771a",
+ "task": "copy of probes/sweep at tag sweep-frozen-1 (3564f98) with this model added to models.json and opencode-models.json"
+}

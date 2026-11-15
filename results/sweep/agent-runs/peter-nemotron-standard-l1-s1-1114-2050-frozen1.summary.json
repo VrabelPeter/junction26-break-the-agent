@@ -1,0 +1,34 @@
+{
+ "run": "peter-nemotron-standard-l1-s1-1114-2050-frozen1",
+ "who": "peter",
+ "model": "nemotron",
+ "model_id": "verda-nemotron/nemotron-3.5-super-vl",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [
+  {
+   "item": "bin",
+   "why": "bin tipped over"
+  }
+ ],
+ "milestones": {
+  "brush_in_hand": 287.35
+ },
+ "robot_time_s": 902.3,
+ "tool_calls": 1071,
+ "minutes": 20.3,
+ "tokens": {
+  "input": 9194510,
+  "cached": 0,
+  "output": 124218
+ },
+ "cost_usd": null,
+ "commit": "ada6c66",
+ "date": "2026-11-14T21:10",
+ "error": null,
+ "trial": "runs/sweep/peter-nemotron-standard-l1-s1-1114-2050-frozen1/2026-11-14__20-50-06/sweep__7hEMFVF",
+ "note": "OpenCode exited with code 1 after the model's final message (finish reason stop, robot time used up); nothing was cut off"
+}

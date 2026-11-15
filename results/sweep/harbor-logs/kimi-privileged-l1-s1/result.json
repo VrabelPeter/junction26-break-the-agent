@@ -1,0 +1,134 @@
+{
+    "schema_version": 1,
+    "id": "e8f69ec5-44f3-4fde-a15d-4cb46b7b786d",
+    "task_name": "junction/living-room-sweep",
+    "trial_name": "sweep__9pNEuQj",
+    "trial_uri": "file:///home/fls/Desktop/research/junction/hack_junction26/runs/sweep/frederik-kimi-privileged-l1-s1-1114-1934-frozen1/2026-11-14__19-34-10/sweep__9pNEuQj",
+    "task_id": {
+        "path": "/home/fls/Desktop/research/junction/hack_junction26/probes/sweep"
+    },
+    "source": null,
+    "task_checksum": "7f9727f468980097fefbc9742b7f1ee94f3db8497bebd3a09ce5a1fd7e343d3a",
+    "config": {
+        "schema_version": 1,
+        "task": {
+            "path": "/home/fls/Desktop/research/junction/hack_junction26/probes/sweep",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "sweep__9pNEuQj",
+        "trials_dir": "/home/fls/Desktop/research/junction/hack_junction26/runs/sweep/frederik-kimi-privileged-l1-s1-1114-1934-frozen1/2026-11-14__19-34-10",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "opencode",
+            "import_path": null,
+            "model_name": "verda/kimi-k3-1-pro",
+            "base_url": "https://inference.verda.com/v1",
+            "model_api_key_name": "VERDA_API_KEY",
+            "model_api_format": "openai_chat_completions",
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "override_error_policy": {},
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "aa83460e-e190-4ed3-85ec-3c94a9ce4dae",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "opencode",
+        "version": "1.19.5",
+        "model_info": {
+            "name": "verda/kimi-k3-1-pro",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 4506502,
+        "n_cache_tokens": 4395712,
+        "n_output_tokens": 12657,
+        "cost_usd": null,
+        "model_usage": {
+            "verda/kimi-k3-1-pro": {
+                "n_input_tokens": 4506502,
+                "n_cache_tokens": 4395712,
+                "n_output_tokens": 12657,
+                "cost_usd": null
+            }
+        },
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-14T18:34:11.224214Z",
+    "finished_at": "2026-11-14T18:48:29.006542Z",
+    "environment_setup": {
+        "started_at": "2026-11-14T18:34:11.248076Z",
+        "finished_at": "2026-11-14T18:34:18.929586Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-14T18:34:18.929630Z",
+        "finished_at": "2026-11-14T18:34:19.448459Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-14T18:34:19.448709Z",
+        "finished_at": "2026-11-14T18:48:17.399220Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-14T18:48:17.591020Z",
+        "finished_at": "2026-11-14T18:48:18.002696Z"
+    },
+    "step_results": null,
+    "reward_valid": true
+}

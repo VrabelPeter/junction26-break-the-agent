@@ -1,0 +1,32 @@
+{
+ "run": "frederik-astra-standard-l1-s1-1114-2244-frozen1",
+ "who": "frederik",
+ "model": "astra",
+ "model_id": "openai/gpt-6-astra",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": 1.0,
+ "trash_in_bin": 1,
+ "mistakes": [],
+ "milestones": {
+  "brush_in_hand": 8.68,
+  "bin_in_hand": 11.07,
+  "brush_touched_trash": 79.98,
+  "first_trash_in_bin": 122.0,
+  "all_trash_in_bin": 122.0
+ },
+ "robot_time_s": 150.4,
+ "tool_calls": 101,
+ "minutes": 7.8,
+ "tokens": {
+  "input": 291,
+  "cached": 2422183,
+  "output": 8068
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-14T22:52",
+ "error": null,
+ "trial": "runs/sweep/frederik-astra-standard-l1-s1-1114-2244-frozen1/2026-11-14__22-44-24/sweep__PdSEJmB"
+}

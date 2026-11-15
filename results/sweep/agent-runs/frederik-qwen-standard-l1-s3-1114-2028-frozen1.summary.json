@@ -1,0 +1,28 @@
+{
+ "run": "frederik-qwen-standard-l1-s3-1114-2028-frozen1",
+ "who": "frederik",
+ "model": "qwen",
+ "model_id": "modal-qwen/qwen3-vl-2b-thinking",
+ "setting": "standard",
+ "level": 1,
+ "seed": 3,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 0.0,
+ "tool_calls": 2,
+ "minutes": 4.0,
+ "tokens": {
+  "input": 72330,
+  "cached": 0,
+  "output": 15330
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-14T20:32",
+ "error": null,
+ "trial": "runs/sweep/frederik-qwen-standard-l1-s3-1114-2028-frozen1/2026-11-14__20-28-09/sweep__dXEcvzY",
+ "commit_recorded_by_script": "5403fe9",
+ "task": "copy of probes/sweep at tag sweep-frozen-1 (3564f98) with this model added to models.json and opencode-models.json"
+}

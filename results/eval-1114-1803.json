@@ -1,0 +1,121 @@
+{
+ "task": "probes/sweep",
+ "level": 1,
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "env": "docker",
+ "model": null,
+ "base_url": null,
+ "summary": {
+  "reference": {
+   "scores": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "mean": 1.0
+  },
+  "do_nothing": {
+   "scores": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "mean": 0.0
+  },
+  "stop_early": {
+   "scores": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "mean": 0.0
+  }
+ },
+ "runs": [
+  {
+   "kind": "reference",
+   "seed": 1,
+   "score": 1.0,
+   "progress": 1.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "reference",
+   "seed": 2,
+   "score": 1.0,
+   "progress": 1.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "reference",
+   "seed": 3,
+   "score": 1.0,
+   "progress": 1.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "do_nothing",
+   "seed": 1,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "do_nothing",
+   "seed": 2,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "do_nothing",
+   "seed": 3,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "stop_early",
+   "seed": 1,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "stop_early",
+   "seed": 2,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "stop_early",
+   "seed": 3,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  }
+ ]
+}

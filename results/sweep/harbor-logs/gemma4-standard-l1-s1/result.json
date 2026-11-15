@@ -1,0 +1,134 @@
+{
+    "schema_version": 1,
+    "id": "06d888aa-d59a-4e28-8a94-844469d80ab7",
+    "task_name": "junction/living-room-sweep",
+    "trial_name": "sweep__C32F3nv",
+    "trial_uri": "file:///home/fls/Desktop/research/junction/hack_junction26/runs/sweep/frederik-gemma4-standard-l1-s1-1114-2116-frozen1/2026-11-14__21-16-55/sweep__C32F3nv",
+    "task_id": {
+        "path": "/home/fls/Desktop/research/junction/hack_junction26/runs/qwen-task/sweep"
+    },
+    "source": null,
+    "task_checksum": "80966cd047b8da4abc814683e3076c30fe7bb329492ffdb752ab2255a8050a58",
+    "config": {
+        "schema_version": 1,
+        "task": {
+            "path": "/home/fls/Desktop/research/junction/hack_junction26/runs/qwen-task/sweep",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "sweep__C32F3nv",
+        "trials_dir": "/home/fls/Desktop/research/junction/hack_junction26/runs/sweep/frederik-gemma4-standard-l1-s1-1114-2116-frozen1/2026-11-14__21-16-55",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "opencode",
+            "import_path": null,
+            "model_name": "modal-gemma4/gemma-4-31b-it",
+            "base_url": "https://sport-fls--sweep-gemma4-31b-serve.us-east.modal.run/v1",
+            "model_api_key_name": "MODAL_QWEN_API_KEY",
+            "model_api_format": "openai_chat_completions",
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "override_error_policy": {},
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "931ba3f9-343e-4f42-aa2d-0053b9463fab",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "opencode",
+        "version": "1.19.5",
+        "model_info": {
+            "name": "modal-gemma4/gemma-4-31b-it",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 2748589,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 2642,
+        "cost_usd": null,
+        "model_usage": {
+            "modal-gemma4/gemma-4-31b-it": {
+                "n_input_tokens": 2748589,
+                "n_cache_tokens": 0,
+                "n_output_tokens": 2642,
+                "cost_usd": null
+            }
+        },
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-14T20:16:56.369094Z",
+    "finished_at": "2026-11-14T20:20:50.870273Z",
+    "environment_setup": {
+        "started_at": "2026-11-14T20:16:56.400281Z",
+        "finished_at": "2026-11-14T20:17:05.007378Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-14T20:17:05.007422Z",
+        "finished_at": "2026-11-14T20:17:05.518701Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-14T20:17:05.518971Z",
+        "finished_at": "2026-11-14T20:20:39.339475Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-14T20:20:39.510261Z",
+        "finished_at": "2026-11-14T20:20:39.863642Z"
+    },
+    "step_results": null,
+    "reward_valid": true
+}

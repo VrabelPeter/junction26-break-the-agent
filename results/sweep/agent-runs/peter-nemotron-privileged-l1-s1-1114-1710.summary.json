@@ -1,0 +1,29 @@
+{
+ "run": "peter-nemotron-privileged-l1-s1-1114-1710",
+ "model": "nemotron",
+ "setting": "privileged",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {
+  "bin_in_hand": 103.27
+ },
+ "robot_time_s": 331.3,
+ "tool_calls": 375,
+ "minutes": 28.3,
+ "tokens": {
+  "input": 123427838,
+  "cached": 0,
+  "output": 470061
+ },
+ "who": "peter",
+ "model_id": "verda-nemotron/nemotron-3.5-super-vl",
+ "cost_usd": null,
+ "commit": "121b6a4",
+ "date": "2026-11-14T17:10",
+ "error": null,
+ "trial": null,
+ "note": "imported from the run made before run names carried a handle"
+}

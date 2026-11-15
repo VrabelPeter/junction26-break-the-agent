@@ -1,0 +1,481 @@
+{
+ "task": "probes/shapes",
+ "level": 2,
+ "seeds": [
+  1,
+  2,
+  4
+ ],
+ "env": "docker",
+ "model": null,
+ "base_url": null,
+ "summary": {
+  "reference": {
+   "scores": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "mean": 1.0
+  },
+  "do_nothing": {
+   "scores": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "mean": 0.0
+  },
+  "stop_early": {
+   "scores": [
+    0.1667,
+    0.1667,
+    0.1667
+   ],
+   "mean": 0.1667
+  }
+ },
+ "runs": [
+  {
+   "kind": "reference",
+   "seed": 1,
+   "score": 1.0,
+   "progress": null,
+   "damaged": 0,
+   "flawless": true,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "rectangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 12
+     },
+     {
+      "shape": "cross",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 10
+     },
+     {
+      "shape": "star",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 12
+     },
+     {
+      "shape": "square",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 4
+     },
+     {
+      "shape": "triangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 12
+     },
+     {
+      "shape": "hexagon",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 5
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "reference",
+   "seed": 2,
+   "score": 1.0,
+   "progress": null,
+   "damaged": 0,
+   "flawless": true,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "cross",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 11
+     },
+     {
+      "shape": "triangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 10
+     },
+     {
+      "shape": "star",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 9
+     },
+     {
+      "shape": "square",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 6
+     },
+     {
+      "shape": "hexagon",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 5
+     },
+     {
+      "shape": "rectangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 5
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "reference",
+   "seed": 4,
+   "score": 1.0,
+   "progress": null,
+   "damaged": 0,
+   "flawless": true,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "rectangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 10
+     },
+     {
+      "shape": "cross",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 10
+     },
+     {
+      "shape": "triangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 6
+     },
+     {
+      "shape": "hexagon",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 5
+     },
+     {
+      "shape": "square",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 10
+     },
+     {
+      "shape": "star",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 4
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "do_nothing",
+   "seed": 1,
+   "score": 0.0,
+   "progress": null,
+   "damaged": 0,
+   "flawless": false,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "rectangle",
+      "score": 0.0,
+      "outcome": "not in the hole",
+      "moves_used": 0
+     },
+     {
+      "shape": "cross",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "star",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "square",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "triangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "hexagon",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "do_nothing",
+   "seed": 2,
+   "score": 0.0,
+   "progress": null,
+   "damaged": 0,
+   "flawless": false,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "cross",
+      "score": 0.0,
+      "outcome": "not in the hole",
+      "moves_used": 0
+     },
+     {
+      "shape": "triangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "star",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "square",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "hexagon",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "rectangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "do_nothing",
+   "seed": 4,
+   "score": 0.0,
+   "progress": null,
+   "damaged": 0,
+   "flawless": false,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "rectangle",
+      "score": 0.0,
+      "outcome": "not in the hole",
+      "moves_used": 0
+     },
+     {
+      "shape": "cross",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "triangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "hexagon",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "square",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "star",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "stop_early",
+   "seed": 1,
+   "score": 0.1667,
+   "progress": null,
+   "damaged": 0,
+   "flawless": false,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "rectangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 12
+     },
+     {
+      "shape": "cross",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "star",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "square",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "triangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "hexagon",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "stop_early",
+   "seed": 2,
+   "score": 0.1667,
+   "progress": null,
+   "damaged": 0,
+   "flawless": false,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "cross",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 11
+     },
+     {
+      "shape": "triangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "star",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "square",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "hexagon",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "rectangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     }
+    ],
+    "damage": []
+   }
+  },
+  {
+   "kind": "stop_early",
+   "seed": 4,
+   "score": 0.1667,
+   "progress": null,
+   "damaged": 0,
+   "flawless": false,
+   "detail": {
+    "pegs": [
+     {
+      "shape": "rectangle",
+      "score": 1.0,
+      "outcome": "seated",
+      "moves_used": 10
+     },
+     {
+      "shape": "cross",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "triangle",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "hexagon",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "square",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     },
+     {
+      "shape": "star",
+      "score": 0.0,
+      "outcome": "never started",
+      "moves_used": 0
+     }
+    ],
+    "damage": []
+   }
+  }
+ ]
+}

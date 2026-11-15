@@ -1,0 +1,26 @@
+{
+ "score": 0.25,
+ "progress": 0.25,
+ "care": 1.0,
+ "trash_total": 4,
+ "trash_in_bin": 1,
+ "mistakes": [],
+ "fate": {
+  "wrapper_1": "on_floor",
+  "wrapper_2": "on_floor",
+  "paper_ball_1": "in_bin",
+  "peel_1": "on_floor",
+  "remote_1": "on_table",
+  "book_1": "on_table"
+ },
+ "milestones": {
+  "brush_in_hand": 23.22,
+  "bin_in_hand": 25.38,
+  "brush_touched_trash": 35.66,
+  "first_trash_in_bin": 105.68
+ },
+ "robot_time_s": 154.2,
+ "seed": 1,
+ "level": 2,
+ "setting": "standard"
+}

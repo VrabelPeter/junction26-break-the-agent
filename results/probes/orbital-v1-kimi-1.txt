@@ -1,0 +1,41 @@
+seed 101: value 2308  reference 2056  score 1.000  (reference 0.909)  stranded on board 13
+windows attended: 30 of 30   commands: 173
+hidden events: faults {'attitude': 4, 'comms': 6}  storm orbit 13  cancelled passes [23, 24]  eclipse 13-18
+
+orbit reads writes rej  captured skipped                      downlink   cum.value  ref.cum  notes
+    1     2      3   0  EC                                    -                          0        0  
+    2     2      3   0  BA                                    -                          0        0  
+    3     2      3   0  CB                                    16GB/144                 144      140  
+    4     2      3   0  AB                                    20GB/139                 283      224  
+    5     1      4   0  CA                                    14GB/95                  378      308  fixed attitude
+    6     3      2   0  ED                                    8GB/90                   468      398  
+    7     1      4   0  CB                                    12GB/66                  534      464  fixed comms
+    8     2      3   0  AD                                    -                        534      464  
+    9     2      3   0  AB                                    10GB/104                 638      568  
+   10     2      3   0  ED                                    24GB/161                 799      709  
+   11     1      4   0  AB                                    20GB/107                 906      776  
+   12     2      3   0  AC                                    20GB/158                1064      934  
+   13     2      3   0                                        7GB/50                  1114      984  
+   14     2      3   0  AC                                    12GB/121                1235     1095  
+   15     4      1   0  ED                                    12GB/62                 1298     1152  
+   16     1      4   0  CB                                    skipped: insuffici      1298     1200  
+   17     3      2   0  B                                     skipped: insuffici      1298     1200  
+   18     2      3   0  D                                     12GB/98                 1396     1265  
+   19     2      3   0  EB                                    16GB/131                1527     1384  
+   20     2      3   0  BC                                    12GB/95                 1622     1479  
+   21     3      2   0  BC                                    16GB/94                 1715     1560  
+   22     1      4   0  BC                                    12GB/67                 1782     1627  
+   23     1      4   0  CB                                    -                       1782     1627  
+   24     2      3   0  BA                                    no pass: cancelled      1782     1627  
+   25     1      4   0  BC                                    20GB/137                1919     1771  
+   26     1      4   0  DE                                    10GB/85                 2004     1851  
+   27     2      3   0  AC                                    12GB/85                 2089     1918  
+   28     1      4   0  BA                                    24GB/116                2205     1972  
+   29     1      0   0  AD                                    12GB/60                 2266     2021  
+   30     1      0   0  CA                                    10GB/42                 2308     2056  mission complete; data still on board is not credited
+
+faults:
+  attitude: began orbit 4; first telemetry look after onset: 4; fixed: 5
+  comms: began orbit 6; first telemetry look after onset: 15; fixed: 7
+storm orbit 13: payload stowed; detector now 1.0
+operations: 54 reads, 88 writes, of 150 available; observations captured 56; passes booked 26

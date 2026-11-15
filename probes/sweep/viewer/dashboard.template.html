@@ -1,0 +1,353 @@
+<title>Living-room sweep</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one column of working panels. Each panel pairs a picture from the simulator with the numbers it produces. */
+:root {
+  --bg: #f3f5f6; --surface: #ffffff; --sunken: #e9edef; --ink: #15212b; --muted: #586675; --line: #d6dde2;
+  --accent: #1d6c68; --accent-ink: #ffffff; --trash: #a8500f; --trash-bg: #fbe9d8; --keep: #2a4d8f; --keep-bg: #e1e9f8;
+  --good: #1c7448; --bad: #b0271f; --bad-bg: #fbe4e2;
+  --display: "Space Grotesk", "Inter", system-ui, sans-serif; --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1418; --surface: #182027; --sunken: #111920; --ink: #e5ebf0; --muted: #94a2af; --line: #2b3742;
+  --accent: #5cc0b9; --accent-ink: #08201f; --trash: #e8a367; --trash-bg: #3a2816; --keep: #93b3ee; --keep-bg: #1c2a44;
+  --good: #6fd09c; --bad: #f28a82; --bad-bg: #40201e; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f1418; --surface: #182027; --sunken: #111920; --ink: #e5ebf0; --muted: #94a2af; --line: #2b3742;
+  --accent: #5cc0b9; --accent-ink: #08201f; --trash: #e8a367; --trash-bg: #3a2816; --keep: #93b3ee; --keep-bg: #1c2a44;
+  --good: #6fd09c; --bad: #f28a82; --bad-bg: #40201e; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.page { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: 34px; line-height: 1.1; } h2 { font-size: 22px; } h3 { font-size: 15px; }
+p { margin: 0; max-width: 68ch; } .muted { color: var(--muted); } .small { font-size: 13px; }
+.eyebrow { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+code, .mono { font-family: var(--mono); font-size: 12.5px; }
+header { display: flex; flex-direction: column; gap: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: var(--surface); white-space: nowrap; }
+.chip.trash { color: var(--trash); background: var(--trash-bg); border-color: transparent; }
+.chip.keep { color: var(--keep); background: var(--keep-bg); border-color: transparent; }
+.chip.priv { color: var(--trash); background: var(--trash-bg); border-color: var(--trash); font-weight: 600; }
+.chip.std { color: var(--keep); background: var(--keep-bg); border-color: var(--keep); font-weight: 600; }
+.chip.warn { color: var(--bad); background: var(--bad-bg); border-color: transparent; }
+section { display: flex; flex-direction: column; gap: 14px; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0; }
+.cols { display: grid; gap: 16px; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+.cols.even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 820px) { .cols, .cols.even { grid-template-columns: minmax(0, 1fr); } h1 { font-size: 28px; } }
+.stack { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+figure { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+figure img { width: 100%; height: auto; display: block; border-radius: 6px; background: var(--sunken); }
+figcaption { font-size: 12.5px; color: var(--muted); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { font: 500 13px var(--body); padding: 6px 12px; border: 0; background: transparent; color: var(--muted); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.presets { display: flex; flex-direction: column; gap: 4px; }
+.presets button { text-align: left; font: 500 13.5px var(--body); padding: 8px 10px; border-radius: 7px; border: 1px solid transparent; background: transparent; color: var(--ink);
+  cursor: pointer; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.presets button:hover { background: var(--sunken); }
+.presets button[aria-pressed="true"] { border-color: var(--accent); background: var(--sunken); }
+.presets .n { font-family: var(--mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.scorebox { display: flex; flex-direction: column; gap: 6px; }
+.score { font: 600 54px/1 var(--display); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.formula { font-family: var(--mono); font-size: 13px; color: var(--ink); }
+.formula b { font-weight: 500; color: var(--accent); }
+ul.plain { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.mistake { color: var(--bad); font-size: 13.5px; } .nomistake { color: var(--good); font-size: 13.5px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th { text-align: left; font-weight: 600; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 4px 8px 6px 0; border-bottom: 1px solid var(--line); }
+td { padding: 5px 8px 5px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+tr:last-child td { border-bottom: 0; }
+select { font: 13px var(--body); padding: 3px 6px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); max-width: 100%; }
+.scroll { overflow-x: auto; }
+.dim img { opacity: 0.35; }
+.note { font-size: 12.5px; color: var(--muted); border-left: 2px solid var(--line); padding-left: 10px; }
+.life { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 820px) { .life { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.life div { background: var(--sunken); border-radius: 8px; padding: 10px 12px; font-size: 13px; }
+.life b { display: block; font-family: var(--display); font-size: 14px; margin-bottom: 2px; }
+.player { display: grid; gap: 14px; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+@media (max-width: 820px) { .player { grid-template-columns: minmax(0, 1fr); } }
+.views { display: grid; gap: 8px; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+.controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.controls button { font: 500 13px var(--body); padding: 6px 12px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.controls button.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.controls input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--accent); }
+.calls { max-height: 420px; overflow: auto; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 8px; }
+.calls button { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 8px; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink);
+  padding: 6px 10px; cursor: pointer; font: 12.5px/1.45 var(--mono); }
+.calls button:last-child { border-bottom: 0; }
+.calls button[aria-current="true"] { background: var(--sunken); box-shadow: inset 3px 0 0 var(--accent); }
+.calls .t { color: var(--muted); font-variant-numeric: tabular-nums; }
+.calls .r { color: var(--muted); display: block; overflow-wrap: anywhere; }
+.dots { display: inline-flex; gap: 3px; flex-wrap: wrap; vertical-align: middle; }
+.dot { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--accent); background: transparent; }
+.dot.on { background: var(--accent); }
+.num { font-variant-numeric: tabular-nums; font-family: var(--mono); }
+details summary { cursor: pointer; font-size: 13px; color: var(--muted); }
+pre { margin: 8px 0 0; padding: 10px 12px; background: var(--sunken); border-radius: 8px; overflow-x: auto; font: 12px/1.5 var(--mono); }
+.prompt { max-height: 560px; overflow: auto; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 12.5px/1.55 var(--mono); }
+.bigformula { font: 500 clamp(17px, 3.2vw, 24px)/1.35 var(--mono); padding: 14px 16px; background: var(--sunken); border-radius: 8px; overflow-x: auto; }
+.bigformula b { color: var(--accent); font-weight: 600; }
+dl.terms { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 8px 16px; margin: 0; font-size: 14px; }
+dl.terms dt { font-weight: 600; } dl.terms dd { margin: 0; color: var(--ink); }
+@media (max-width: 620px) { dl.terms { grid-template-columns: minmax(0, 1fr); } dl.terms dd { margin-bottom: 6px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="page">
+  <header>
+    <span class="eyebrow">Junction 2026 · Break the Agent · build sweep-frozen-1</span>
+    <h1>Living-room sweep</h1>
+    <p>A wheeled two-arm robot fetches a brush and a bin, then gets the trash, and only the trash, from a coffee table and a sofa into the bin. It sees the room through its cameras; nobody tells it where things are or which of them are trash.</p>
+    <div class="chips">
+      <span class="chip">MuJoCo 4.0.1, real contact physics</span>
+      <span class="chip">PAL TIAGo++ from MuJoCo Menagerie</span>
+      <span class="chip">score from the final physical state</span>
+      <span class="chip warn">recorded runs: see the comparison page</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="h-room">
+    <div class="head">
+      <h2 id="h-room">Environment</h2>
+      <div class="seg" id="levelTabs" role="group" aria-label="Difficulty level"></div>
+    </div>
+    <div class="cols">
+      <div class="panel stack">
+        <figure><img id="overview" alt="The living room from above a corner"><figcaption id="levelNote"></figcaption></figure>
+        <div id="itemChips" class="chips"></div>
+      </div>
+      <div class="panel stack">
+        <div class="head"><h3>What the robot sees</h3>
+          <div class="seg" id="camTabs" role="group" aria-label="Camera output">
+            <button id="camRgb" aria-pressed="true">Colour</button><button id="camDepth" aria-pressed="false">Depth</button><button id="camTop" aria-pressed="false">Floor plan</button>
+          </div></div>
+        <figure><img id="head" alt="Head camera image"><figcaption id="camNote"></figcaption></figure>
+        <p class="note">Standard setting, as in the Embodied First Exam: the head camera in colour and depth with its calibration, two wrist cameras in colour, and the robot's own joint readings. No object positions, no labels, no count of the trash, and no tool that turns a pixel into a position: that geometry is the agent's to do. The privileged setting adds the position and kind of every object; it exists for ablation.</p>
+      </div>
+    </div>
+      <div class="cols even">
+      <div class="panel stack">
+        <h3>What the agent gets (observation)</h3>
+        <div class="scroll"><table><thead><tr><th>Given</th><th>Not given</th></tr></thead><tbody>
+          <tr><td>Head camera: colour and depth (metres), with focal length and camera pose. Wrist cameras: colour</td><td>Position of any object, or a tool that computes one from a pixel</td></tr>
+          <tr><td>Base position and heading, torso height, head angles</td><td>Which things are trash, or how many</td></tr>
+          <tr><td>Each hand: position, finger opening, what it holds, joint angles</td><td>Where the brush and the bin are once moved</td></tr>
+          <tr><td>Floor plan: table, sofa seat, tool station, walls</td><td>Resets or second attempts</td></tr>
+          <tr><td>Robot time left</td><td>The score, before the end</td></tr>
+        </tbody></table></div>
+        <details><summary>One observation as the agent receives it</summary><pre id="obsJson"></pre></details>
+      </div>
+      <div class="panel stack">
+        <h3>What the agent can do (actions)</h3>
+        <div class="scroll"><table><thead><tr><th>Tool</th><th>What it does</th></tr></thead><tbody>
+          <tr><td><code>drive_to(x, y, heading)</code></td><td>Straight-line move of the base, 0.4 m/s. Stops where it is blocked.</td></tr>
+          <tr><td><code>move_arm(arm, x, y, z, yaw)</code></td><td>Straight-line move of one hand, palm down, 0.25 m/s.</td></tr>
+          <tr><td><code>grasp(arm)</code></td><td>Close the fingers. Takes a tool when the hand is on its handle.</td></tr>
+          <tr><td><code>release(arm)</code></td><td>Open the fingers and let go.</td></tr>
+          <tr><td><code>home_arm(arm)</code></td><td>Bring an arm back to its resting posture.</td></tr>
+          <tr><td><code>can_reach(arm, x, y, z, yaw)</code></td><td>Whether <code>move_arm</code> with these arguments would arrive. Free.</td></tr>
+          <tr><td><code>look(pan, tilt)</code>, <code>set_torso(h)</code></td><td>Point the head camera, raise or lower the torso.</td></tr>
+          <tr><td><code>camera(name)</code></td><td>Colour picture with calibration; for the head camera also a depth picture. The depth values are a file the agent's own code can download.</td></tr>
+          <tr><td><code>observe()</code>, <code>get_task()</code></td><td>Joint readings; the goal, the floor plan and the tool sizes.</td></tr>
+        </tbody></table></div>
+        <p class="note">Sweeping is contact physics: the bristles push whatever is in front of them, and a piece falls into the bin only if the bin is under the edge it leaves. Taking a tool is assisted: it attaches when the hand closes on the handle.</p>
+      </div>
+    </div>
+    <div class="panel stack">
+      <div class="head"><h3>The task prompt</h3><span class="muted small">probes/sweep/instruction.md, verbatim: Harbor hands it to the agent as its task, with nothing added</span></div>
+      <pre class="prompt" id="prompt"></pre>
+    </div>
+    <p class="note">Episode limits: 900 s of robot time; the world is paused between calls; one attempt, no resets. How an end state is scored is the next section.</p>
+  </section>
+
+  <section aria-labelledby="h-score">
+    <div class="head"><h2 id="h-score">Reward design</h2></div>
+    <div class="panel stack">
+      <div class="bigformula">reward = (<b>trash in the bin</b> ÷ <b>all trash</b>) × 0.5<sup><b>mistakes</b></sup></div>
+      <dl class="terms">
+        <dt>Trash in the bin</dt><dd>A piece counts when its centre lies between the bin's four walls, above the bin's floor and at most 3 cm above the rim, with the bin upright and its opening up. Trash under the bin, or a bin set down over it, does not count.</dd>
+        <dt>Mistake</dt><dd>A personal item that ends in the bin, a personal item that ends on the floor, or the bin on its side. Each one halves the reward.</dd>
+        <dt>Earns nothing</dt><dd>Trash on the floor or anywhere else outside the bin (it costs nothing either). Reaching the tools, picking them up, touching things: those moments are logged for the failure analysis and paid nothing.</dd>
+        <dt>When it is measured</dt><dd>Once, at the end: when the agent stops or its 900 s of robot time are used up, the room is left alone for 2 s and the scorer reads where everything lies in the simulator. One number from 0 to 1 goes to <code>/logs/verifier/reward.txt</code>.</dd>
+        <dt>Why this shape</dt><dd>The first factor pays for progress on the task; the second makes care multiply rather than add, so sweeping everything off the table, personal items included, scores far below doing the job properly. Doing nothing scores 0.</dd>
+      </dl>
+    </div>
+    <div class="head"><h3>Try it on an end state</h3><span class="muted small">level 3 · seed 1 · 8 pieces of trash, 4 personal items, a jacket</span></div>
+    <p class="muted">Pick a state on the left or set where each thing ends up. The pictures are the simulator in that state, and the number beside them is what its scorer returned.</p>
+    <div class="cols">
+      <div class="panel stack">
+        <figure id="presetFig"><img id="presetImg" alt="The room in the chosen end state"><figcaption id="presetBlurb"></figcaption></figure>
+        <div class="presets" id="presets" role="group" aria-label="End states"></div>
+      </div>
+      <div class="stack">
+        <div class="panel scorebox">
+          <span class="eyebrow">Reward written to reward.txt</span>
+          <div class="score" id="scoreNum">0.00</div>
+          <div class="formula" id="formula"></div>
+          <ul class="plain" id="mistakes"></ul>
+          <div class="small muted" id="scorerLine"></div>
+        </div>
+        <div class="panel stack">
+          <div class="head"><h3>Where each thing ends up</h3>
+            <label class="small"><input type="checkbox" id="upright" checked> bin stands upright</label></div>
+          <div class="scroll"><table><thead><tr><th>Thing</th><th>Kind</th><th>End state</th></tr></thead><tbody id="itemRows"></tbody></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel stack">
+      <h3>What simple policies earn, level 1, rooms 1 to 20</h3>
+      <div class="scroll"><table><thead><tr><th>Policy</th><th>Setting</th><th>Mean reward</th><th>Per room (seeds 1 to 20)</th></tr></thead><tbody id="baseRows"></tbody></table></div>
+      <p class="note">Computed in the simulator, in-process, when this page was built. The reference works in the standard setting, from the cameras (colour, depth, calibration) and joint readings, as the agent must. The scripted controller runs the same motions but is told where everything is (privileged setting). Films of the reference and of every model run are on the comparison page.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-roll">
+    <div class="head"><h2 id="h-roll">Single rollout</h2><span class="muted small" id="rollMeta"></span></div>
+    <p class="note" id="rollSetting"></p>
+    <div class="life">
+      <div><b>Reset</b>A seed and a level fix the room. The robot starts by the wall with empty hands.</div>
+      <div><b>Tool calls</b>Each call moves the robot for some seconds of robot time and returns what it now senses. The world is paused between calls.</div>
+      <div><b>Stop</b>The agent ends its turn, or the <span id="limit"></span> s of robot time run out.</div>
+      <div><b>Settle and score</b>The world is left alone for <span id="settle"></span> s, then the scorer reads where everything lies.</div>
+    </div>
+    <div class="panel player">
+      <div class="stack">
+        <div class="views">
+          <figure><img id="frame" alt="The room at this step"><figcaption>Room camera (for people; the agent never gets it)</figcaption></figure>
+          <figure><img id="frameHead" alt="Head camera at this step"><figcaption>Head camera (what the agent gets)</figcaption></figure>
+        </div>
+        <div class="controls">
+          <button id="prev" aria-label="Previous step">Back</button>
+          <button id="play" class="primary">Play</button>
+          <button id="next" aria-label="Next step">Next</button>
+          <input type="range" id="scrub" min="0" value="0" aria-label="Step">
+          <span class="num small" id="stepLabel"></span>
+        </div>
+        <div id="rollScore" class="stack"></div>
+      </div>
+      <div class="stack">
+        <div class="calls" id="calls"></div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<script>
+const D = /*DATA*/null;
+const $ = id => document.getElementById(id);
+const el = (tag, attrs = {}, text) => { const e = document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text !== undefined) e.textContent = text; return e; };
+const fmt = v => (Math.round(v * 1000) / 1000).toFixed(v === Math.round(v * 100) / 100 ? 2 : 3);
+
+// ---- the room ----
+let level = 2, cam = "rgb";
+function drawRoom() {
+  const L = D.levels[level];
+  $("overview").src = L.overview;
+  $("levelNote").textContent = "Level " + L.level + ", seed 1: " + L.note + ".";
+  const chips = $("itemChips"); chips.replaceChildren();
+  L.items.forEach(it => chips.append(el("span", { class: "chip " + (it.trash ? "trash" : "keep") }, it.label + (it.trash ? " · trash" : " · leave"))));
+  $("head").src = cam === "rgb" ? L.head : cam === "depth" ? L.depth : L.top;
+  const c = L.calibration;
+  $("camNote").textContent = cam === "top" ? "The floor plan is given. Where the small things lie is not."
+    : cam === "depth" ? "Depth, 640 x 480, near is light. With the calibration (focal length " + c.f + " px) each pixel becomes a point in the room."
+    : "Head camera, 640 x 480, standing in front of the table and looking down.";
+  [...$("levelTabs").children].forEach((b, i) => b.setAttribute("aria-pressed", i === level));
+  [["camRgb", "rgb"], ["camDepth", "depth"], ["camTop", "top"]].forEach(([id, k]) => $(id).setAttribute("aria-pressed", cam === k));
+  const o = JSON.parse(JSON.stringify(L.observation)); ["left_hand", "right_hand"].forEach(h => { if (o[h]) o[h].joints = "[7 angles]"; });
+  $("obsJson").textContent = JSON.stringify(o, null, 1);
+}
+D.levels.forEach((L, i) => { const b = el("button", {}, "Level " + L.level); b.onclick = () => { level = i; drawRoom(); }; $("levelTabs").append(b); });
+[["camRgb", "rgb"], ["camDepth", "depth"], ["camTop", "top"]].forEach(([id, k]) => $(id).onclick = () => { cam = k; drawRoom(); });
+
+// ---- score an end state ----
+const items = D.items, state = {}, START = "stay";
+const fateToState = f => f === "in_bin" ? "bin" : f === "on_floor" ? "floor" : START;
+let preset = null;
+function score() {
+  const up = $("upright").checked, trash = items.filter(i => i.trash), mistakes = [];
+  const inBin = up ? trash.filter(i => state[i.name] === "bin").length : 0;
+  items.filter(i => !i.trash).forEach(i => {
+    if (state[i.name] === "bin" && up) mistakes.push(i.label + " in the bin");
+    else if (state[i.name] === "floor" || state[i.name] === "bin") mistakes.push(i.label + " on the floor");
+  });
+  if (!up) mistakes.push("bin tipped over");
+  return { inBin, total: trash.length, mistakes, value: inBin / trash.length * Math.pow(0.5, mistakes.length) };
+}
+function drawScore() {
+  const s = score();
+  $("scoreNum").textContent = s.value.toFixed(s.value * 100 % 1 ? 3 : 2);
+  $("formula").innerHTML = "<b>" + s.inBin + "</b> of " + s.total + " in the bin × 0.5<sup>" + s.mistakes.length + "</sup> = " + (s.inBin / s.total).toFixed(3) + " × " + Math.pow(0.5, s.mistakes.length);
+  const m = $("mistakes"); m.replaceChildren();
+  if (!s.mistakes.length) m.append(el("li", { class: "nomistake" }, "No mistakes"));
+  s.mistakes.forEach(t => m.append(el("li", { class: "mistake" }, "Mistake: " + t)));
+  const P = preset !== null ? D.presets[preset] : null;
+  $("presetFig").classList.toggle("dim", !P);
+  $("presetBlurb").textContent = P ? P.blurb : "Custom state: scored by the same rule. Pictures exist for the listed states.";
+  $("scorerLine").textContent = P ? "Simulator's scorer for this state: " + P.score + (Math.abs(P.score - s.value) < 0.001 ? ", the same." : " (differs: check the state)") : "";
+  [...$("presets").children].forEach((b, i) => b.setAttribute("aria-pressed", i === preset));
+}
+function setPreset(i) {
+  preset = i; const P = D.presets[i];
+  items.forEach(it => { state[it.name] = fateToState(P.fate[it.name]); $("sel_" + it.name).value = state[it.name]; });
+  $("upright").checked = P.bin_upright; $("presetImg").src = P.image; drawScore();
+}
+items.forEach(it => {
+  const tr = el("tr"), sel = el("select", { id: "sel_" + it.name, "aria-label": "End state of " + it.label });
+  [[START, "stays on the " + it.surface], ["bin", "in the bin"], ["floor", "on the floor"]].forEach(([v, t]) => sel.append(el("option", { value: v }, t)));
+  sel.onchange = () => { state[it.name] = sel.value; preset = null; drawScore(); };
+  const kind = el("td"); kind.append(el("span", { class: "chip " + (it.trash ? "trash" : "keep") }, it.trash ? "trash" : "leave"));
+  const cell = el("td"); cell.append(sel);
+  tr.append(el("td", {}, it.label), kind, cell); $("itemRows").append(tr);
+});
+$("upright").onchange = () => { preset = null; drawScore(); };
+D.presets.forEach((P, i) => { const b = el("button"); b.append(el("span", {}, P.title), el("span", { class: "n" }, String(P.score))); b.onclick = () => setPreset(i); $("presets").append(b); });
+
+// ---- one rollout ----
+const R = D.rollout, steps = R.steps; let cur = 0, timer = null;
+const call = s => s.tool + "(" + Object.entries(s.args).map(([k, v]) => v).join(", ") + ")";
+const res = s => typeof s.result === "string" ? s.result : Object.entries(s.result).map(([k, v]) => k.replace("error_m", "off by (m)") + ": " + v).join(" · ");
+steps.forEach((s, i) => { const b = el("button"); b.append(el("span", { class: "t" }, s.t.toFixed(1) + " s")); const body = el("span"); body.append(el("span", {}, call(s)), el("span", { class: "r" }, res(s))); b.append(body); b.onclick = () => { stop(); show(i); }; $("calls").append(b); });
+function show(i) {
+  cur = Math.max(0, Math.min(steps.length - 1, i)); const s = steps[cur];
+  $("frame").src = s.frame; $("frameHead").src = s.head; $("scrub").value = cur;
+  $("stepLabel").textContent = "step " + cur + " of " + (steps.length - 1) + " · " + s.t.toFixed(1) + " s";
+  [...$("calls").children].forEach((b, j) => { b.setAttribute("aria-current", j === cur); if (j === cur) b.scrollIntoView({ block: "nearest" }); });
+}
+function stop() { if (timer) { clearInterval(timer); timer = null; $("play").textContent = "Play"; } }
+$("play").onclick = () => { if (timer) return stop(); if (cur >= steps.length - 1) show(0); $("play").textContent = "Pause"; timer = setInterval(() => { if (cur >= steps.length - 1) stop(); else show(cur + 1); }, 700); };
+$("prev").onclick = () => { stop(); show(cur - 1); }; $("next").onclick = () => { stop(); show(cur + 1); };
+$("scrub").max = steps.length - 1; $("scrub").oninput = e => { stop(); show(+e.target.value); };
+const priv = R.setting !== "standard";      // pages built before the setting was recorded used the privileged controller
+$("rollMeta").replaceChildren(el("span", { class: "chip " + (priv ? "priv" : "std") }, priv ? "privileged setting" : "standard setting"),
+  document.createTextNode(" " + (priv ? "scripted controller (privileged)" : "the reference") + " · level " + R.level + " · seed " + R.seed + " · " + R.trash.join(", ")));
+$("rollSetting").textContent = priv
+  ? "Privileged setting: this scripted controller is told the position and kind of every object, which the agent in the standard setting is not. It shows the motions the task needs. The reference that works from the cameras, colour, depth and joint readings, as the agent must, is filmed on the comparison page."
+  : "Standard setting: the reference works from the cameras (colour, depth, calibration) and joint readings, as the agent must.";
+$("limit").textContent = D.time_limit; $("settle").textContent = D.settle;
+const names = { brush_in_hand: "brush in hand", bin_in_hand: "bin in hand", brush_touched_trash: "brush touches trash", brush_touched_personal_item: "brush touches a personal item", first_trash_in_bin: "first piece in the bin", all_trash_in_bin: "all trash in the bin" };
+const ms = el("div", { class: "chips" }); Object.entries(R.score.milestones).forEach(([k, t]) => ms.append(el("span", { class: "chip" }, (names[k] || k) + " at " + t + " s")));
+$("rollScore").append(el("div", { class: "small muted" }, "Logged along the way (earns nothing):"), ms,
+  el("div", { class: "formula" }, "End: " + R.score.trash_in_bin + " of " + R.score.trash_total + " in the bin × 0.5^" + R.score.mistakes.length + " = score " + R.score.score + " after " + R.score.robot_time_s + " s of robot time"));
+
+const B = D.baselines, label = { do_nothing: "Do nothing", stop_early: "Fetch the tools, then stop", reference_privileged: "Scripted controller", reference: "The reference" },
+  setting = { reference_privileged: "privileged", reference: "standard" };
+Object.entries(B.scores).forEach(([k, v]) => { const tr = el("tr"), dots = el("span", { class: "dots", role: "img", "aria-label": v.filter(x => x >= 0.999).length + " of " + v.length + " rooms at full score" });
+  v.forEach(x => dots.append(el("span", { class: "dot" + (x >= 0.999 ? " on" : "") }))); const c = el("td"); c.append(dots);
+  const sc = el("td"); sc.append(el("span", { class: "chip " + (setting[k] === "privileged" ? "priv" : "std") }, setting[k] || "either: it never looks"));
+  tr.append(el("td", {}, label[k] || k), sc, el("td", { class: "num" }, (v.reduce((a, b) => a + b, 0) / v.length).toFixed(2)), c); $("baseRows").append(tr); });
+
+$("prompt").textContent = D.instruction || "(the instruction is not included in this build of the page)";
+drawRoom(); setPreset(4); show(0);
+</script>

@@ -1,0 +1,26 @@
+{
+ "run": "frederik-qwen35ftthink-standard-l1-s1-1115-0421-sft-b-think",
+ "who": "frederik",
+ "model": "qwen35ftthink",
+ "model_id": "modal-qwen35ftthink/qwen3.5-9b-sweep",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": 0.0,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "milestones": {},
+ "robot_time_s": 143.1,
+ "tool_calls": 89,
+ "minutes": 6.0,
+ "tokens": {
+  "input": 2254462,
+  "cached": 0,
+  "output": 8436
+ },
+ "cost_usd": null,
+ "commit": "3564f98",
+ "date": "2026-11-15T04:27",
+ "error": "agent cut off, not a clean run (NonZeroAgentExitCodeError)",
+ "trial": "runs/sweep/frederik-qwen35ftthink-standard-l1-s1-1115-0421-sft-b-think/2026-11-15__04-21-19/sweep__2Q484BU"
+}

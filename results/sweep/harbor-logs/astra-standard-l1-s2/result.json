@@ -1,0 +1,134 @@
+{
+    "schema_version": 1,
+    "id": "1c99aca5-38da-4d8f-97d6-d3859e5bd122",
+    "task_name": "junction/living-room-sweep",
+    "trial_name": "sweep__jNusXRP",
+    "trial_uri": "file:///home/fls/Desktop/research/junction/hack_junction26/runs/sweep/frederik-astra-standard-l1-s2-1114-2244-frozen1/2026-11-14__22-44-24/sweep__jNusXRP",
+    "task_id": {
+        "path": "/home/fls/Desktop/research/junction/hack_junction26/runs/qwen-task/sweep"
+    },
+    "source": null,
+    "task_checksum": "c21b46f662b1d99b0e829925b017a81f1fbed715765e6464e3e73ac657ed308a",
+    "config": {
+        "schema_version": 1,
+        "task": {
+            "path": "/home/fls/Desktop/research/junction/hack_junction26/runs/qwen-task/sweep",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "sweep__jNusXRP",
+        "trials_dir": "/home/fls/Desktop/research/junction/hack_junction26/runs/sweep/frederik-astra-standard-l1-s2-1114-2244-frozen1/2026-11-14__22-44-24",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "opencode",
+            "import_path": null,
+            "model_name": "openai/gpt-6-astra",
+            "base_url": null,
+            "model_api_key_name": "OPENAI_KEY",
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "override_error_policy": {},
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "1da35f9a-fc6d-4165-952f-8bf25d5cf9a1",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "opencode",
+        "version": "1.19.5",
+        "model_info": {
+            "name": "gpt-6-astra",
+            "provider": "openai"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 1315943,
+        "n_cache_tokens": 1315748,
+        "n_output_tokens": 2593,
+        "cost_usd": 1.9953855,
+        "model_usage": {
+            "openai/gpt-6-astra": {
+                "n_input_tokens": 1315943,
+                "n_cache_tokens": 1315748,
+                "n_output_tokens": 2593,
+                "cost_usd": 1.9953855
+            }
+        },
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-14T21:44:26.192223Z",
+    "finished_at": "2026-11-14T21:49:24.185364Z",
+    "environment_setup": {
+        "started_at": "2026-11-14T21:44:26.217771Z",
+        "finished_at": "2026-11-14T21:44:38.726841Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-14T21:44:38.726876Z",
+        "finished_at": "2026-11-14T21:44:39.223993Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-14T21:44:39.224204Z",
+        "finished_at": "2026-11-14T21:49:12.638119Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-14T21:49:12.830890Z",
+        "finished_at": "2026-11-14T21:49:13.237253Z"
+    },
+    "step_results": null,
+    "reward_valid": true
+}

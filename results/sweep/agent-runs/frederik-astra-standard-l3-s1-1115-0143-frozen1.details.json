@@ -1,0 +1,35 @@
+{
+ "score": 1.0,
+ "progress": 1.0,
+ "care": 1.0,
+ "trash_total": 8,
+ "trash_in_bin": 8,
+ "mistakes": [],
+ "fate": {
+  "jacket_1": "on_sofa",
+  "wrapper_1": "in_bin",
+  "can_1": "in_bin",
+  "can_2": "in_bin",
+  "peel_1": "in_bin",
+  "can_3": "in_bin",
+  "tissue_1": "in_bin",
+  "paper_ball_1": "in_bin",
+  "wrapper_2": "in_bin",
+  "keys_1": "on_sofa",
+  "book_1": "on_table",
+  "glasses_1": "on_table",
+  "remote_1": "on_sofa"
+ },
+ "milestones": {
+  "brush_in_hand": 8.33,
+  "bin_in_hand": 16.37,
+  "brush_touched_personal_item": 26.4,
+  "brush_touched_trash": 33.82,
+  "first_trash_in_bin": 40.92,
+  "all_trash_in_bin": 137.0
+ },
+ "robot_time_s": 144.0,
+ "seed": 1,
+ "level": 3,
+ "setting": "standard"
+}

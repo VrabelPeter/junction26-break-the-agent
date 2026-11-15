@@ -1,0 +1,28 @@
+{
+ "score": 0.0,
+ "progress": 0.0,
+ "care": 1.0,
+ "trash_total": 8,
+ "trash_in_bin": 0,
+ "mistakes": [],
+ "fate": {
+  "jacket_1": "on_sofa",
+  "wrapper_1": "on_table",
+  "can_1": "on_table",
+  "can_2": "on_sofa",
+  "peel_1": "on_table",
+  "can_3": "on_table",
+  "tissue_1": "on_sofa",
+  "paper_ball_1": "on_table",
+  "wrapper_2": "on_table",
+  "keys_1": "on_sofa",
+  "book_1": "on_table",
+  "glasses_1": "on_table",
+  "remote_1": "on_sofa"
+ },
+ "milestones": {},
+ "robot_time_s": 12.7,
+ "seed": 1,
+ "level": 3,
+ "setting": "standard"
+}

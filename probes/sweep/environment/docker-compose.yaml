@@ -1,0 +1,24 @@
+# Merged over Harbor's base compose file. `main` is the agent container; the
+# simulator, its state and the score live in `env-server`.
+services:
+  main:
+    depends_on:
+      env-server:
+        condition: service_healthy
+
+  env-server:
+    build:
+      context: ./env-server
+    environment:
+      # TABLETOP_SEED and TABLETOP_LEVEL are accepted too, so eval/run_eval.py --task probes/sweep works unchanged.
+      SWEEP_SEED: "${SWEEP_SEED:-${TABLETOP_SEED:-1}}"
+      SWEEP_LEVEL: "${SWEEP_LEVEL:-${TABLETOP_LEVEL:-1}}"
+      SWEEP_SETTING: "${SWEEP_SETTING:-standard}"
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; s=socket.create_connection(('localhost',8000),timeout=2); s.close()"]
+      interval: 2s
+      timeout: 5s
+      retries: 60
+      start_period: 10s

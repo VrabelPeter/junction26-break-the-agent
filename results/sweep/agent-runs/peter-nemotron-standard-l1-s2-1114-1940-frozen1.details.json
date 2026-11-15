@@ -1,0 +1,21 @@
+{
+ "score": 0.0,
+ "progress": 0.0,
+ "care": 0.5,
+ "trash_total": 1,
+ "trash_in_bin": 0,
+ "mistakes": [
+  {
+   "item": "bin",
+   "why": "bin tipped over"
+  }
+ ],
+ "fate": {
+  "can_1": "on_table"
+ },
+ "milestones": {},
+ "robot_time_s": 107.6,
+ "seed": 2,
+ "level": 1,
+ "setting": "standard"
+}

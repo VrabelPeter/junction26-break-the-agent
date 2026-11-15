@@ -1,0 +1,35 @@
+{
+ "run": "peter-fable-standard-l2-s2-1115-0207",
+ "who": "peter",
+ "model": "fable",
+ "model_id": "anthropic/claude-fable-5-2",
+ "setting": "standard",
+ "level": 2,
+ "seed": 2,
+ "score": 1.0,
+ "trash_in_bin": 4,
+ "mistakes": [],
+ "milestones": {
+  "brush_in_hand": 10.72,
+  "bin_in_hand": 17.28,
+  "first_trash_in_bin": 87.5,
+  "brush_touched_trash": 108.18,
+  "all_trash_in_bin": 176.0
+ },
+ "robot_time_s": 208.3,
+ "tool_calls": 1168,
+ "minutes": 18.1,
+ "tokens": {
+  "input": 162,
+  "cached": 6479856,
+  "output": 57591,
+  "cache_write": 142889
+ },
+ "cost_usd": 5.03,
+ "commit": "d7e0cb9+uncommitted",
+ "date": "2026-11-15T02:25",
+ "error": null,
+ "trial": "runs/sweep/peter-fable-standard-l2-s2-1115-0207/2026-11-15__02-07-50/sweep__tu8X7pD",
+ "variant": "medium",
+ "uncommitted_checked": "probes/sweep/models.json only (fable variant high -> medium); every other file under probes/sweep matched d7e0cb9 (checked 15 Nov 02:40); the medium entry is committed on main since"
+}

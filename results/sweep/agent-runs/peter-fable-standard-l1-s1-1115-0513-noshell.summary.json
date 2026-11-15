@@ -1,0 +1,33 @@
+{
+ "run": "peter-fable-standard-l1-s1-1115-0513-noshell",
+ "who": "peter",
+ "model": "fable",
+ "model_id": "anthropic/claude-fable-5-2",
+ "setting": "standard",
+ "level": 1,
+ "seed": 1,
+ "score": 1.0,
+ "trash_in_bin": 1,
+ "mistakes": [],
+ "milestones": {
+  "brush_in_hand": 9.3,
+  "bin_in_hand": 12.49,
+  "brush_touched_trash": 55.36,
+  "first_trash_in_bin": 59.99,
+  "all_trash_in_bin": 59.99
+ },
+ "robot_time_s": 80.8,
+ "tool_calls": 78,
+ "minutes": 6.1,
+ "tokens": {
+  "input": 62,
+  "cached": 1294617,
+  "output": 28889,
+  "cache_write": 75313
+ },
+ "cost_usd": 2.17,
+ "commit": "bb71e44",
+ "date": "2026-11-15T05:19",
+ "error": null,
+ "trial": "runs/sweep/peter-fable-standard-l1-s1-1115-0513-noshell/2026-11-15__05-13-42/sweep__HyAhf5y"
+}
