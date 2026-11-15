@@ -1,0 +1,77 @@
+{
+ "task": "probes/sweep",
+ "level": 1,
+ "seeds": [
+  1
+ ],
+ "env": "docker",
+ "model": "verda/kimi-k3-1-pro",
+ "base_url": "https://inference.verda.com/v1",
+ "summary": {
+  "reference": {
+   "scores": [
+    1.0
+   ],
+   "mean": 1.0
+  },
+  "do_nothing": {
+   "scores": [
+    0.0
+   ],
+   "mean": 0.0
+  },
+  "stop_early": {
+   "scores": [
+    0.0
+   ],
+   "mean": 0.0
+  },
+  "agent": {
+   "scores": [
+    null
+   ],
+   "mean": NaN,
+   "context_overflow_seeds": [],
+   "context_length": null,
+   "mean_without_overflow": NaN
+  }
+ },
+ "runs": [
+  {
+   "kind": "reference",
+   "seed": 1,
+   "score": 1.0,
+   "progress": 1.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "do_nothing",
+   "seed": 1,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "stop_early",
+   "seed": 1,
+   "score": 0.0,
+   "progress": 0.0,
+   "damaged": null,
+   "flawless": null,
+   "detail": null
+  },
+  {
+   "kind": "agent",
+   "seed": 1,
+   "score": null,
+   "error": "no score (harbor exit 130); see /home/peter/Projects/junction_hack/runs/eval/1115-0634-agent-s1.log",
+   "context": "ok",
+   "peak_prompt_tokens": 50855,
+   "context_length": null
+  }
+ ]
+}

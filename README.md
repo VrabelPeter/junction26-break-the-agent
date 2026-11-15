@@ -75,9 +75,11 @@ python3 eval/run_eval.py --task probes/sweep --level 1 --seeds 1 2 3 --skip-agen
 - A single run by hand: `harbor run -p probes/sweep -a opencode -m <provider/model>`, with the room and level
   in `SWEEP_SEED` and `SWEEP_LEVEL` (exact lines: [`probes/sweep/README.md`](probes/sweep/README.md), "Under Harbor").
 
-What we have run through this command: the version without a model, on the current build (experiment `1115-0522`;
-reference 1.0 / 1.0 / 1.0, both baselines 0.0, file `results/eval-1115-0458.json`). The model runs reported below
-were started one room at a time with `probes/sweep/run_agent.py`, which starts the same Harbor task.
+What we have run through this command on the current build: the version without a model on rooms 1 to 3
+(experiment `1115-0522`; reference 1.0 / 1.0 / 1.0, both baselines 0.0, file `results/eval-1115-0458.json`), and
+the full command on room 1 as a check (`1115-0640`; reference 1.0, both baselines 0.0, and the Kimi run received
+the camera pictures and drove the robot until we stopped it after 4 minutes, so it has no score). The model runs
+reported below were started one room at a time with `probes/sweep/run_agent.py`, which starts the same Harbor task.
 
 ## Results
 
